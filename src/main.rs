@@ -1,6 +1,7 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 
 mod views_main;
+mod forms;
 // mod catchers;
 // mod cache;
 
@@ -20,6 +21,8 @@ fn main() {
             views_main::index,
             views_main::get,
             views_main::world,
+            views_main::form_get,
+            views_main::form_post,
             ])
         .mount("/static", StaticFiles::from("static"))
         .attach(Template::fairing())

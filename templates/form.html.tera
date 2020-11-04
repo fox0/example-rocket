@@ -1,0 +1,9 @@
+{% extends "base" %}
+
+{% block content %}
+<form action="/form" method="post">
+    {{ form }}
+    <input type="text" name="field"/>
+    <input type="submit" value="submit"/>
+</form>
+{% endblock %}
