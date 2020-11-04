@@ -1,3 +1,4 @@
+use rocket::State;
 use rocket::response::Redirect;
 use rocket_contrib::templates::Template;
 
@@ -14,8 +15,8 @@ pub fn index() -> Redirect {
 }
 
 #[get("/world")]
-pub fn world() -> &'static str {
-    "Hello, world!"
+pub fn world(conn: State<i32>) -> String /*&'static str*/ {
+    format!("Hello, world! {}", conn.inner())
 }
 
 #[get("/hello/<name>")]
