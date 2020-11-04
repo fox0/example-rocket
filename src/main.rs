@@ -20,3 +20,7 @@ fn main() {
         // .register(catchers![catchers::not_found])
         .launch();
 }
+
+// todo кешировать статику
+// todo проверить чтение/запись блобов
+// todo генератор/метод для форм
