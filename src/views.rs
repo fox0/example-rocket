@@ -13,6 +13,11 @@ pub fn index() -> Redirect {
     Redirect::to(uri!(get: name = "Unknown"))
 }
 
+#[get("/world")]
+pub fn world() -> &'static str {
+    "Hello, world!"
+}
+
 #[get("/hello/<name>")]
 pub fn get(name: String) -> Template {
     let context = TemplateContext { name, items: vec!["One", "Two", "Three"] };

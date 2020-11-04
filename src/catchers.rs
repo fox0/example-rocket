@@ -6,7 +6,7 @@ use rocket_contrib::templates::Template;
 
 #[catch(404)]
 pub fn not_found(req: &Request<'_>) -> Template {
-    let mut map = HashMap::new();
-    map.insert("path", req.uri().path());
-    Template::render("error/404", &map)
+    let mut context = HashMap::new();
+    context.insert("path", req.uri().path());
+    Template::render("error/404", &context)
 }
